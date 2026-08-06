@@ -5,3 +5,9 @@
 ```bash
 xfreerdp /v:<target_ip> /u:<username> /p:<password> /cert:ignore +fonts
 ```
+
+`2. listing samba shares using smbclient`
+
+```bash
+smbclient -L //10.49.137.168 -N
+```
