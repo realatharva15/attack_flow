@@ -16,3 +16,10 @@ this spawned a root shell which was temporary but useful enough to solve the roo
 
 `LESSON LEARNT:`
 check out permission flaws and use GTFObins for quick wins
+
+`NOTE: if you have done privilege escalation from user A to user B without creds and user B is present in the docker group, then in order to activate a new session enter this command`
+
+```bash
+newgrp docker
+```
+this command will make sure that the user B will have the group of user B and not user A because the session wasn't changed during the horizontal privilege escalation.
